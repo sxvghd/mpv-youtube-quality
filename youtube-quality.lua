@@ -258,7 +258,7 @@ function reload_resume()
     local reload_duration = mp.get_property_native("duration")
     local time_pos = mp.get_property("time-pos")
 
-    mp.set_property_number("playlist-pos", playlist_pos)
+    mp.commandv("playlist-play-index", playlist_pos)
 
     -- Tries to determine live stream vs. pre-recordered VOD. VOD has non-zero
     -- duration property. When reloading VOD, to keep the current time position
